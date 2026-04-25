@@ -18,13 +18,13 @@ Traditional CA programs are bogged down by manual spreadsheets and lack of recog
 - **Deployment:** Vercel
 
 ## ⚙️ Setup & Installation
-1. Clone the repo: `git clone <your-repo-link>`
+1. Clone the repo: `git clone https://github.com/htmlbody/AICore-Connect-Hackathon-.git`
 2. Install dependencies: `npm install`
 3. Add your API Key to `.env`: `VITE_AI_API_KEY=your_key`
 4. Run locally: `npm run dev`
 
 ## 👤 Developed By
-- **[Your Name]** - Hackathon Participant
+- **Nitin Katkam** - Hackathon Participant
 
 ---
 *Built for the AICore Connect Hackathon 2026.*
