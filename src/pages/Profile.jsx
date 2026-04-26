@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { User, Mail, BookOpen, Save, Camera, Check } from 'lucide-react';
+import Logo from '../components/Logo';
 
 const GithubIcon = ({ size = 24, style }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" 
