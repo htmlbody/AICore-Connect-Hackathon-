@@ -11,9 +11,15 @@ Traditional CA programs are bogged down by manual spreadsheets and lack of recog
 - **💡 AI Mentorship:** Personalized coaching for ambassadors to improve marketing impact.
 - **🏆 Smart Recognition:** Instant, AI-generated achievement badges and certifications.
 
+## 🎥 Project Demo
+
+> **Watch the full walkthrough here:** [YouTube Demo Walkthrough](https://youtu.be/xMKk57to6UY)
+
+![AURA AI Dashboard Preview](https://github.com/htmlbody/AICore-Connect-Hackathon-/raw/main/public/preview.png)
+
 ## 🛠️ Tech Stack
 - **Frontend:** React + Vite (Fast, Premium UI)
-- **Styling:** Vanilla CSS (Glassmorphism & Modern Design)
+- **Styling:** Vanilla CSS (Glassmorphism & GPU Accelerated)
 - **Intelligence:** OpenAI GPT-4 / Google Gemini Pro
 - **Deployment:** Vercel
 
