@@ -76,14 +76,16 @@ const Rewards = () => {
             <motion.div 
               id="certificate-print-area"
               initial={{ scale: 0.9, opacity: 0, y: 30 }} animate={{ scale: 1, opacity: 1, y: 0 }} exit={{ scale: 1.1, opacity: 0 }}
+              className="certificate-modal-inner"
               style={{ 
                 width: '100%', maxWidth: 850, background: '#fff', borderRadius: 24, 
                 padding: 4, boxShadow: '0 50px 100px -20px rgba(0,0,0,0.5)', 
-                flexShrink: 0, marginBottom: 40 
+                flexShrink: 0, marginBottom: 40,
+                transformOrigin: 'top center'
               }}>
               
               {/* Certificate Inner Frame */}
-              <div style={{ border: '20px solid #f8fafc', height: '100%', borderRadius: 20, padding: 60, position: 'relative', color: '#1e293b', textAlign: 'center' }}>
+              <div style={{ border: '20px solid #f8fafc', height: '100%', borderRadius: 20, padding: '60px 40px', position: 'relative', color: '#1e293b', textAlign: 'center' }}>
                 {/* Decorative Elements */}
                 <div style={{ position: 'absolute', top: 30, left: 30, width: 100, height: 100, borderLeft: '2px solid #e2e8f0', borderTop: '2px solid #e2e8f0' }} />
                 <div style={{ position: 'absolute', bottom: 30, right: 30, width: 100, height: 100, borderRight: '2px solid #e2e8f0', borderBottom: '2px solid #e2e8f0' }} />
@@ -92,35 +94,35 @@ const Rewards = () => {
                   <Logo size={64} light={true} />
                 </div>
 
-                <h1 style={{ fontSize: 42, fontWeight: 900, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: 12, color: '#0f172a' }}>Certificate of Excellence</h1>
-                <p style={{ fontSize: 14, color: '#64748b', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.2em', marginBottom: 50 }}>This is to certify that</p>
+                <h1 style={{ fontSize: 'clamp(24px, 5vw, 42px)', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: 12, color: '#0f172a' }}>Certificate of Excellence</h1>
+                <p style={{ fontSize: 12, color: '#64748b', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.2em', marginBottom: 40 }}>This is to certify that</p>
                 
-                <h2 style={{ fontSize: 48, fontWeight: 800, color: '#10b981', marginBottom: 16, fontStyle: 'italic' }}>{userData.name}</h2>
-                <div style={{ width: 300, height: 1, background: '#e2e8f0', margin: '0 auto 32px' }} />
+                <h2 style={{ fontSize: 'clamp(32px, 6vw, 48px)', fontWeight: 800, color: '#10b981', marginBottom: 16, fontStyle: 'italic' }}>{userData.name}</h2>
+                <div style={{ width: 200, height: 1, background: '#e2e8f0', margin: '0 auto 32px' }} />
                 
-                <p style={{ fontSize: 18, color: '#475569', lineHeight: 1.6, maxWidth: 550, margin: '0 auto 60px' }}>
+                <p style={{ fontSize: 'clamp(14px, 2vw, 18px)', color: '#475569', lineHeight: 1.6, maxWidth: 550, margin: '0 auto 40px' }}>
                   Has demonstrated exceptional technical leadership and commitment as a 
                   <strong style={{ color: '#0f172a' }}> Campus Ambassador</strong> at 
                   <strong style={{ color: '#10b981' }}> {userData.university}</strong>.
                 </p>
 
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginTop: 40, padding: '0 40px' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginTop: 40, gap: 20 }}>
                   <div style={{ textAlign: 'left' }}>
-                    <div style={{ height: 1, width: 150, background: '#cbd5e1', marginBottom: 12 }} />
-                    <p style={{ fontSize: 11, fontWeight: 800, color: '#64748b', textTransform: 'uppercase' }}>Program Director</p>
+                    <div style={{ height: 1, width: 100, background: '#cbd5e1', marginBottom: 12 }} />
+                    <p style={{ fontSize: 10, fontWeight: 800, color: '#64748b', textTransform: 'uppercase' }}>Program Director</p>
                   </div>
                   
                   {/* Neural Seal */}
-                  <div style={{ position: 'relative', width: 100, height: 100, display: 'grid', placeItems: 'center' }}>
-                    <Sparkles size={80} color="#facc15" style={{ opacity: 0.2, position: 'absolute' }} />
-                    <div style={{ width: 70, height: 70, borderRadius: '50%', border: '2px dashed #facc15', display: 'grid', placeItems: 'center' }}>
-                      <span style={{ fontSize: 10, fontWeight: 900, color: '#854d0e' }}>AURA AI</span>
+                  <div style={{ position: 'relative', width: 80, height: 80, display: 'grid', placeItems: 'center', flexShrink: 0 }}>
+                    <Sparkles size={60} color="#facc15" style={{ opacity: 0.2, position: 'absolute' }} />
+                    <div style={{ width: 60, height: 60, borderRadius: '50%', border: '2px dashed #facc15', display: 'grid', placeItems: 'center' }}>
+                      <span style={{ fontSize: 8, fontWeight: 900, color: '#854d0e' }}>AURA AI</span>
                     </div>
                   </div>
 
                   <div style={{ textAlign: 'right' }}>
-                    <p style={{ fontSize: 11, fontWeight: 800, color: '#64748b' }}>VERIFICATION HASH</p>
-                    <p style={{ fontSize: 10, fontFamily: 'monospace', color: '#94a3b8' }}>AURA-0x7F2B{Math.random().toString(36).substring(7).toUpperCase()}</p>
+                    <p style={{ fontSize: 9, fontWeight: 800, color: '#64748b' }}>VERIFICATION HASH</p>
+                    <p style={{ fontSize: 8, fontFamily: 'monospace', color: '#94a3b8' }}>AURA-0x7F2B{Math.random().toString(36).substring(7).toUpperCase()}</p>
                   </div>
                 </div>
               </div>
@@ -147,10 +149,7 @@ const Rewards = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => {
-                  setShowSuccess("Neural PDF generated!");
-                  setTimeout(() => {
-                    window.print();
-                  }, 500);
+                  window.print();
                 }}
                 className="btn-primary" style={{ 
                   background: 'var(--primary)', 
@@ -192,6 +191,32 @@ const Rewards = () => {
                 <Share2 size={18} /> Share on LinkedIn
               </button>
             </div>
+
+            <style>{`
+              @media screen and (max-width: 850px) {
+                .certificate-modal-inner {
+                  transform: scale(calc(100vw / 950));
+                  margin-top: -50px;
+                }
+              }
+              @media print {
+                body * { visibility: hidden; }
+                #certificate-print-area, #certificate-print-area * { visibility: visible; }
+                #certificate-print-area {
+                  position: absolute;
+                  left: 0;
+                  top: 0;
+                  width: 100% !important;
+                  max-width: none !important;
+                  box-shadow: none !important;
+                  margin: 0 !important;
+                  padding: 0 !important;
+                  transform: scale(1) !important;
+                }
+                .certificate-actions, header, .glass-card, .mobile-header, .sidebar { display: none !important; }
+                @page { size: landscape; margin: 0; }
+              }
+            `}</style>
           </motion.div>
         )}
       </AnimatePresence>
