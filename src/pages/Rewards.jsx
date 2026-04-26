@@ -76,62 +76,63 @@ const Rewards = () => {
             <motion.div 
               id="certificate-print-area"
               initial={{ scale: 0.9, opacity: 0, y: 30 }} animate={{ scale: 1, opacity: 1, y: 0 }} exit={{ scale: 1.1, opacity: 0 }}
-              className="certificate-modal-inner"
               style={{ 
-                width: 850, background: '#fff', borderRadius: 24, 
+                width: 'min(95vw, 850px)', background: '#fff', borderRadius: 24, 
                 padding: 4, boxShadow: '0 50px 100px -20px rgba(0,0,0,0.5)', 
-                flexShrink: 0, marginBottom: 40,
-                transformOrigin: 'top center',
-                aspectRatio: '1.414 / 1', // Standard A4 Aspect Ratio
-                overflow: 'hidden'
+                flexShrink: 0, marginBottom: 40, position: 'relative'
               }}>
               
               {/* Certificate Inner Frame */}
-              <div style={{ border: '20px solid #f8fafc', height: '100%', borderRadius: 20, padding: '40px 60px', position: 'relative', color: '#1e293b', textAlign: 'center', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+              <div style={{ 
+                border: '15px solid #f8fafc', height: '100%', borderRadius: 20, 
+                padding: 'min(8vw, 60px) min(6vw, 40px)', position: 'relative', 
+                color: '#1e293b', textAlign: 'center', display: 'flex', 
+                flexDirection: 'column', justifyContent: 'center' 
+              }}>
                 {/* Decorative Elements */}
-                <div style={{ position: 'absolute', top: 30, left: 30, width: 100, height: 100, borderLeft: '2px solid #e2e8f0', borderTop: '2px solid #e2e8f0' }} />
-                <div style={{ position: 'absolute', bottom: 30, right: 30, width: 100, height: 100, borderRight: '2px solid #e2e8f0', borderBottom: '2px solid #e2e8f0' }} />
+                <div style={{ position: 'absolute', top: 20, left: 20, width: '15%', height: '15%', borderLeft: '2px solid #e2e8f0', borderTop: '2px solid #e2e8f0' }} />
+                <div style={{ position: 'absolute', bottom: 20, right: 20, width: '15%', height: '15%', borderRight: '2px solid #e2e8f0', borderBottom: '2px solid #e2e8f0' }} />
                 
-                <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 32 }}>
-                  <Logo size={64} light={true} />
+                <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 'min(6vw, 40px)' }}>
+                  <Logo size={56} light={true} />
                 </div>
 
-                <h1 style={{ fontSize: 42, fontWeight: 900, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: 12, color: '#0f172a' }}>Certificate of Excellence</h1>
-                <p style={{ fontSize: 12, color: '#64748b', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.2em', marginBottom: 32 }}>This is to certify that</p>
+                <h1 style={{ fontSize: 'clamp(20px, 5.5vw, 42px)', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: 8, color: '#0f172a', lineHeight: 1.1 }}>Certificate of Excellence</h1>
+                <p style={{ fontSize: 'clamp(10px, 2vw, 12px)', color: '#64748b', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.2em', marginBottom: 'min(8vw, 40px)' }}>This is to certify that</p>
                 
-                <h2 style={{ fontSize: 48, fontWeight: 800, color: '#10b981', marginBottom: 16, fontStyle: 'italic' }}>{userData.name}</h2>
-                <div style={{ width: 200, height: 1, background: '#e2e8f0', margin: '0 auto 32px' }} />
+                <h2 style={{ fontSize: 'clamp(28px, 8vw, 48px)', fontWeight: 800, color: '#10b981', marginBottom: 12, fontStyle: 'italic', lineHeight: 1 }}>{userData.name}</h2>
+                <div style={{ width: '30%', height: 1, background: '#e2e8f0', margin: '0 auto 24px' }} />
                 
-                <p style={{ fontSize: 18, color: '#475569', lineHeight: 1.6, maxWidth: 550, margin: '0 auto 40px' }}>
+                <p style={{ fontSize: 'clamp(13px, 3vw, 18px)', color: '#475569', lineHeight: 1.5, maxWidth: 550, margin: '0 auto min(10vw, 40px)' }}>
                   Has demonstrated exceptional technical leadership and commitment as a 
                   <strong style={{ color: '#0f172a' }}> Campus Ambassador</strong> at 
                   <strong style={{ color: '#10b981' }}> {userData.university}</strong>.
                 </p>
 
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', alignItems: 'flex-end', marginTop: 20, width: '100%' }}>
-                  <div style={{ textAlign: 'left' }}>
-                    <div style={{ height: 1, width: 120, background: '#cbd5e1', marginBottom: 12 }} />
-                    <p style={{ fontSize: 10, fontWeight: 800, color: '#64748b', textTransform: 'uppercase' }}>Program Director</p>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginTop: 'auto', gap: 10 }}>
+                  <div style={{ textAlign: 'left', flex: 1 }}>
+                    <div style={{ height: 1, width: '80%', maxWidth: 120, background: '#cbd5e1', marginBottom: 8 }} />
+                    <p style={{ fontSize: 'clamp(8px, 1.5vw, 10px)', fontWeight: 800, color: '#64748b', textTransform: 'uppercase' }}>Program Director</p>
                   </div>
                   
                   {/* Neural Seal */}
-                  <div style={{ position: 'relative', width: '100%', height: 80, display: 'grid', placeItems: 'center' }}>
-                    <Sparkles size={60} color="#facc15" style={{ opacity: 0.2, position: 'absolute' }} />
-                    <div style={{ width: 60, height: 60, borderRadius: '50%', border: '2px dashed #facc15', display: 'grid', placeItems: 'center' }}>
-                      <span style={{ fontSize: 8, fontWeight: 900, color: '#854d0e' }}>AURA AI</span>
+                  <div style={{ position: 'relative', width: 'min(15vw, 80px)', height: 'min(15vw, 80px)', display: 'grid', placeItems: 'center', flexShrink: 0 }}>
+                    <Sparkles size={50} color="#facc15" style={{ opacity: 0.2, position: 'absolute' }} />
+                    <div style={{ width: '80%', height: '80%', borderRadius: '50%', border: '1px dashed #facc15', display: 'grid', placeItems: 'center' }}>
+                      <span style={{ fontSize: 'clamp(6px, 1.2vw, 8px)', fontWeight: 900, color: '#854d0e' }}>AURA AI</span>
                     </div>
                   </div>
 
-                  <div style={{ textAlign: 'right' }}>
-                    <p style={{ fontSize: 9, fontWeight: 800, color: '#64748b', marginBottom: 4 }}>VERIFICATION HASH</p>
-                    <p style={{ fontSize: 8, fontFamily: 'monospace', color: '#94a3b8' }}>AURA-0x7F2B{Math.random().toString(36).substring(7).toUpperCase()}</p>
+                  <div style={{ textAlign: 'right', flex: 1 }}>
+                    <p style={{ fontSize: 'clamp(7px, 1.2vw, 9px)', fontWeight: 800, color: '#64748b', marginBottom: 2 }}>VERIFICATION HASH</p>
+                    <p style={{ fontSize: 'clamp(6px, 1vw, 8px)', fontFamily: 'monospace', color: '#94a3b8', wordBreak: 'break-all' }}>AURA-0x7F2B{Math.random().toString(36).substring(7).toUpperCase()}</p>
                   </div>
                 </div>
               </div>
             </motion.div>
             
             {/* Premium Action Buttons */}
-            <div className="certificate-actions" style={{ display: 'flex', gap: 12, marginTop: 40, paddingBottom: 60, flexWrap: 'wrap', justifyContent: 'center' }}>
+            <div className="certificate-actions" style={{ display: 'flex', gap: 12, marginTop: 24, paddingBottom: 60, flexWrap: 'wrap', justifyContent: 'center', width: '100%', maxWidth: '95vw' }}>
               <button 
                 onClick={() => setShowCertificate(false)}
                 className="btn-primary" 
@@ -139,10 +140,10 @@ const Rewards = () => {
                   background: 'rgba(239, 68, 68, 0.1)', 
                   color: '#ef4444', 
                   border: '1px solid rgba(239, 68, 68, 0.2)',
-                  padding: '12px 24px',
-                  fontSize: 13,
+                  padding: '12px 20px',
+                  fontSize: 12,
                   fontWeight: 700,
-                  letterSpacing: '0.02em'
+                  borderRadius: 12
                 }}>
                 Close Viewer
               </button>
@@ -150,20 +151,17 @@ const Rewards = () => {
               <button 
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() => {
-                  window.print();
-                }}
+                onClick={() => window.print()}
                 className="btn-primary" style={{ 
                   background: 'var(--primary)', 
-                  padding: '12px 28px',
-                  fontSize: 13,
+                  padding: '12px 24px',
+                  fontSize: 12,
                   fontWeight: 700,
-                  letterSpacing: '0.02em',
                   display: 'flex',
                   alignItems: 'center',
                   gap: 8,
+                  borderRadius: 12,
                   boxShadow: '0 10px 20px -5px var(--primary-glow)',
-                  cursor: 'pointer'
                 }}>
                 <Download size={18} /> Download Neural PDF
               </button>
@@ -173,59 +171,37 @@ const Rewards = () => {
                 whileTap={{ scale: 0.95 }}
                 onClick={() => {
                   if (window.location.hostname === 'localhost') {
-                    alert("LinkedIn Sharing: This feature requires a live URL. Once you deploy to Vercel, this will automatically generate a preview of your certificate for your network!");
+                    alert("LinkedIn Sharing: This feature requires a live URL. Once you deploy to Vercel, this will automatically generate a preview of your certificate!");
                   } else {
                     window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(window.location.href)}`, '_blank');
                   }
                 }}
                 className="btn-primary" style={{ 
                 background: '#0077b5', 
-                padding: '12px 28px',
-                fontSize: 13,
+                padding: '12px 24px',
+                fontSize: 12,
                 fontWeight: 700,
-                letterSpacing: '0.02em',
                 display: 'flex',
                 alignItems: 'center',
                 gap: 8,
+                borderRadius: 12,
                 boxShadow: '0 10px 20px -5px rgba(0, 119, 181, 0.3)',
-                cursor: 'pointer'
               }}>
-                <Share2 size={18} /> Share on LinkedIn
+                <Share2 size={18} /> Share
               </button>
             </div>
 
             <style>{`
-              @media screen and (max-width: 900px) {
-                .certificate-modal-inner {
-                  transform: scale(calc(100vw / 950));
-                  margin-top: -120px;
-                  margin-bottom: -150px;
-                }
-              }
               @media print {
-                html, body { 
-                  margin: 0 !important; 
-                  padding: 0 !important; 
-                  height: 100% !important;
-                  overflow: hidden !important;
-                }
+                html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; }
                 body * { visibility: hidden; }
                 #certificate-print-area, #certificate-print-area * { visibility: visible; }
                 #certificate-print-area {
-                  position: absolute;
-                  left: 0;
-                  top: 0;
-                  width: 100vw !important;
-                  height: 100vh !important;
-                  max-width: none !important;
-                  box-shadow: none !important;
-                  margin: 0 !important;
-                  padding: 0 !important;
-                  transform: scale(1) !important;
-                  border: none !important;
-                  border-radius: 0 !important;
+                  position: absolute; left: 0; top: 0; width: 100vw !important; height: 100vh !important;
+                  max-width: none !important; box-shadow: none !important; margin: 0 !important;
+                  padding: 0 !important; border: none !important; border-radius: 0 !important;
                 }
-                .certificate-actions, header, .glass-card, .mobile-header, .sidebar { display: none !important; }
+                .certificate-actions { display: none !important; }
                 @page { size: landscape; margin: 0; }
               }
             `}</style>
