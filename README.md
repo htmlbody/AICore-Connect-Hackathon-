@@ -82,6 +82,26 @@ VITE_AI_API_KEY=DEMO
 npm run dev
 ```
 
+## 🛠️ Core Tech Stack
+
+The AURA AI architecture is built for speed, scalability, and premium aesthetics:
+
+*   **Frontend:** React 18 + Vite (Ultra-fast HMR and build times)
+*   **Animations:** Framer Motion (GPU-accelerated layout transitions)
+*   **Icons:** Lucide React (Clean, consistent SVG iconography)
+*   **Charts:** Recharts (High-performance data visualization)
+*   **Styling:** Pure Vanilla CSS (Custom design system with 0 dependencies)
+
+## 📁 Project Architecture
+
+Every directory is structured for maximum maintainability:
+
+*   `src/components/` - Reusable UI primitives (GlassCards, Buttons, Badges)
+*   `src/pages/` - Core platform modules (Intelligence Hub, Leaderboard, etc.)
+*   `src/utils/` - Logic layers for AI processing and GitHub data syncing
+*   `src/hooks/` - Custom React hooks for global state and localStorage persistence
+*   `public/` - High-resolution assets and branded icons
+
 ## 👤 Developed By
 - **Nitin Katkam** - *Hackathon Participant & Lead Developer*
 
