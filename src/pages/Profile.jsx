@@ -137,7 +137,7 @@ const Profile = () => {
         )}
       </AnimatePresence>
 
-      <div style={{ display: 'grid', gridTemplateColumns: '320px 1fr', gap: 32, alignItems: 'start' }}>
+      <div className="responsive-grid-2-1" style={{ display: 'grid', gridTemplateColumns: '320px 1fr', gap: 32, alignItems: 'start' }}>
         {/* Left Column: Avatar & Quick Info */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
           <motion.div 
@@ -260,7 +260,7 @@ const Profile = () => {
           className="glass-card" 
           style={{ padding: 40 }}>
           <form onSubmit={handleSave} style={{ display: 'flex', flexDirection: 'column', gap: 28 }}>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24 }}>
+            <div className="responsive-grid-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24 }}>
               <div>
                 <label style={{ display: 'block', fontSize: 12, fontWeight: 600, color: 'var(--text-muted)', marginBottom: 10 }}>Full Name</label>
                 <div style={{ position: 'relative' }}>
@@ -289,7 +289,7 @@ const Profile = () => {
               </div>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24 }}>
+            <div className="responsive-grid-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24 }}>
               <div>
                 <label style={{ display: 'block', fontSize: 12, fontWeight: 600, color: 'var(--text-muted)', marginBottom: 10 }}>GitHub Username</label>
                 <div style={{ position: 'relative' }}>
