@@ -34,6 +34,17 @@ AURA AI is built to transform how tech companies manage and scale their campus a
 *   **Instant Rewards:** One-click generation of high-resolution, branded "Certificates of Excellence."
 *   **Personalized Data:** Each certificate is uniquely generated with the ambassador's name, university, and milestone achievements.
 
+## ✨ Technical Innovations & Micro-Interactions
+
+AURA AI is packed with "Pro" features and micro-interactions that make the platform feel like a high-end SaaS product:
+
+*   **⌨️ Command Palette (`Ctrl + K`):** A power-user feature for instant navigation. Search and jump between any page on the platform without touching the mouse.
+*   **🚀 GPU-Accelerated Rendering:** We use hardware acceleration (`translateZ(0)` and `will-change`) for all glassmorphism cards and background orbs to ensure a butter-smooth 60FPS experience.
+*   **🛡️ Crash-Proof Persistence:** Every piece of ambassador data, including onboarding progress and task states, is instantly persisted to `localStorage`, ensuring zero data loss during a refresh.
+*   **🎭 Neural Theme Sync:** A proprietary theme engine that instantly flips the entire design system's CSS variables between Ultra-Dark and Light modes with high-performance CSS transitions.
+*   **🧩 Smart Fallback System:** Built-in "Demo Mode" that detects the absence of API keys and triggers high-fidelity simulated AI assessments so the product never breaks during a pitch.
+*   **📱 Precision Responsiveness:** A custom-built grid system that ensures the complex Intelligence Hub and Task Boards are perfectly legible on everything from a 4K monitor to a mobile device.
+
 ## 🎥 Project Demo
 
 > **Watch the full walkthrough here:** [YouTube Demo Walkthrough](https://youtu.be/xMKk57to6UY)
