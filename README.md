@@ -39,9 +39,9 @@ npm install
 ### 2. Environment Configuration
 Create a `.env` file in the root directory and add your AI API key:
 ```env
-VITE_AI_API_KEY=your_secret_key_here
+VITE_AI_API_KEY=DEMO
 ```
-*(Note: If no key is provided, the platform will automatically run in **Smart Demo Mode** with high-fidelity simulated data for testing.)*
+*(Note: Using **'DEMO'** enables the built-in Smart Demo Mode with high-fidelity simulated data. To use live AI, replace this with your actual Gemini or OpenAI API key.)*
 
 ### 3. Launch Platform
 ```bash
