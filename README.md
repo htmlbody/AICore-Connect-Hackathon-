@@ -25,14 +25,31 @@ Traditional CA programs are bogged down by manual spreadsheets and lack of recog
 - **Intelligence:** OpenAI GPT-4 / Google Gemini Pro
 - **Deployment:** Vercel
 
-## ⚙️ Setup & Installation
-1. Clone the repo: `git clone https://github.com/htmlbody/AICore-Connect-Hackathon-.git`
-2. Install dependencies: `npm install`
-3. Add your API Key to `.env`: `VITE_AI_API_KEY=your_key`
-4. Run locally: `npm run dev`
+## 🚀 Quick Start Guide
+
+Get AURA AI running locally in less than 60 seconds.
+
+### 1. Clone & Install
+```bash
+git clone https://github.com/htmlbody/AICore-Connect-Hackathon-.git
+cd AICore-Connect-Hackathon-
+npm install
+```
+
+### 2. Environment Configuration
+Create a `.env` file in the root directory and add your AI API key:
+```env
+VITE_AI_API_KEY=your_secret_key_here
+```
+*(Note: If no key is provided, the platform will automatically run in **Smart Demo Mode** with high-fidelity simulated data for testing.)*
+
+### 3. Launch Platform
+```bash
+npm run dev
+```
 
 ## 👤 Developed By
-- **Nitin Katkam** - Hackathon Participant
+- **Nitin Katkam** - *Hackathon Participant & Lead Developer*
 
 ---
-*Built for the AICore Connect Hackathon 2026.*
+*Built with ❤️ for the AICore Connect Hackathon 2026.*
