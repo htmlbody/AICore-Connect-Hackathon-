@@ -5,11 +5,34 @@
 ## 🚀 The Vision
 Traditional CA programs are bogged down by manual spreadsheets and lack of recognition. **AURA AI** transforms this experience by using Generative AI to automate verification, provide personalized mentorship, and deliver deep brand sentiment insights.
 
-## ✨ Key Features
-- **🤖 GenAI Verification:** Automated proof-of-work validation using vision and text analysis.
-- **📊 Real-time Dashboard:** High-fidelity analytics for tracking engagement and growth.
-- **💡 AI Mentorship:** Personalized coaching for ambassadors to improve marketing impact.
-- **🏆 Smart Recognition:** Instant, AI-generated achievement badges and certifications.
+## 🌟 Platform Deep Dive
+
+AURA AI is built to transform how tech companies manage and scale their campus ambassador programs. Here’s a detailed look at the core features:
+
+### 🧠 **AI Intelligence Hub**
+*   **Recruiter-Level Assessment:** Uses LLMs (OpenAI/Gemini) to perform a holistic deep-scan of an ambassador's GitHub footprint.
+*   **Holistic Scoring:** Generates a "Recruiter Score" (0-100) based on project documentation, consistency, and language versatility across all repositories.
+*   **AI Resume Polish:** Automatically generates professional, high-impact resume bullet points based on the ambassador's technical achievements.
+
+### 🌓 **Neural Theme Engine**
+*   **High-Fidelity Modes:** A pixel-perfect implementation of both Ultra-Dark and High-Contrast Light modes.
+*   **GPU Accelerated:** Every transition, blur effect, and animation is hardware-accelerated for a buttery-smooth 60FPS experience, even on lower-end devices.
+
+### 🏆 **Global Leaderboard**
+*   **Real-time Rankings:** Tracks ambassador engagement and technical growth in a dynamic, glassmorphism-styled table.
+*   **Achievement Badges:** Visual recognition for milestones like "Top Performer" or "Code Architect," incentivizing healthy competition.
+
+### 📋 **Task Command Center**
+*   **Interactive Task Board:** A centralized hub for ambassadors to view, manage, and submit proof-of-work for their marketing and technical tasks.
+*   **Progress Tracking:** Visual indicators of task completion to ensure program consistency.
+
+### 👤 **Dynamic Profile System**
+*   **Automated Syncing:** Pulls real-time data from GitHub to populate ambassador profiles instantly.
+*   **Personalized Social Hub:** Automatically generates a hub of social links and technical skills based on the user's digital identity.
+
+### 📜 **Smart Certifications**
+*   **Instant Rewards:** One-click generation of high-resolution, branded "Certificates of Excellence."
+*   **Personalized Data:** Each certificate is uniquely generated with the ambassador's name, university, and milestone achievements.
 
 ## 🎥 Project Demo
 
