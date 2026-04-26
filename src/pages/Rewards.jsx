@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { jsPDF } from 'jspdf';
+import Logo from '../components/Logo';
 import { Award, Flame, Star, Trophy, Target, Lock, CheckCircle, Download, Share2, Sparkles } from 'lucide-react';
 import { AnimatePresence } from 'framer-motion';
 
@@ -87,9 +89,7 @@ const Rewards = () => {
                 <div style={{ position: 'absolute', bottom: 30, right: 30, width: 100, height: 100, borderRight: '2px solid #e2e8f0', borderBottom: '2px solid #e2e8f0' }} />
                 
                 <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 40 }}>
-                  <div style={{ width: 64, height: 64, borderRadius: 16, background: '#10b981', display: 'grid', placeItems: 'center', transform: 'rotate(45deg)' }}>
-                    <div style={{ fontSize: 32, transform: 'rotate(-45deg)' }}>🌌</div>
-                  </div>
+                  <Logo size={64} light={true} />
                 </div>
 
                 <h1 style={{ fontSize: 42, fontWeight: 900, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: 12, color: '#0f172a' }}>Certificate of Excellence</h1>

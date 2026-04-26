@@ -3,6 +3,8 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Eye, EyeOff, Sparkles, Sun, Moon } from 'lucide-react';
 
+import Logo from '../components/Logo';
+
 const LoginPage = ({ onLogin }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -100,12 +102,10 @@ const LoginPage = ({ onLogin }) => {
                 animate={{ scale: 1 }}
                 transition={{ delay: 0.2, type: 'spring', stiffness: 200 }}
                 style={{
-                  width: 56, height: 56, borderRadius: 18, display: 'grid', placeItems: 'center',
-                  background: 'linear-gradient(135deg, var(--primary), #059669)',
-                  boxShadow: '0 8px 32px rgba(16,185,129,0.3)',
+                  width: 56, height: 56, display: 'grid', placeItems: 'center',
                   margin: '0 auto 20px',
                 }}>
-                <div style={{ fontSize: 32 }}>🌌</div>
+                <Logo size={56} />
               </motion.div>
               <h1 style={{ fontSize: 28, fontWeight: 800, letterSpacing: '-0.03em', marginBottom: 6 }}>
                 AURA <span style={{ color: 'var(--primary)' }}>AI</span>

@@ -11,6 +11,7 @@ import TaskBoard from './pages/TaskBoard';
 import Rewards from './pages/Rewards';
 import Profile from './pages/Profile';
 import Onboarding from './pages/Onboarding';
+import Logo from './components/Logo';
 
 const App = () => {
   // Initialize from localStorage to persist across refreshes
@@ -183,7 +184,7 @@ const App = () => {
       {/* Mobile Header */}
       <div className="mobile-header">
         <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-          <span style={{ fontSize: 24 }}>🌌</span>
+          <Logo size={32} />
           <span style={{ fontSize: 18, fontWeight: 900, color: 'var(--text-main)', letterSpacing: '-0.5px' }}>AURA AI</span>
         </div>
         <button 
@@ -287,13 +288,7 @@ const App = () => {
         zIndex: 50, flexShrink: 0, overflowY: 'auto',
       }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-          <div style={{
-            width: 40, height: 40, borderRadius: 14, display: 'grid', placeItems: 'center',
-            background: 'linear-gradient(135deg, var(--primary), #059669)', 
-            boxShadow: '0 4px 20px var(--primary-glow)', fontSize: 22
-          }}>
-            🌌
-          </div>
+          <Logo size={40} />
           <h2 style={{ fontSize: 20, fontWeight: 700, letterSpacing: '-0.03em' }}>
             AURA <span style={{ color: 'var(--primary)' }}>AI</span>
           </h2>

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { User, BookOpen, Sparkles, ArrowRight, Check, Camera, Mail, FileText, Code2 } from 'lucide-react';
+import Logo from '../components/Logo';
 
 const GithubIcon = ({ size = 24, style }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" 
@@ -35,10 +36,10 @@ const Onboarding = ({ onComplete }) => {
       content: (
         <div style={{ textAlign: 'center' }}>
           <div style={{ 
-            width: 80, height: 80, borderRadius: 24, background: 'var(--primary-glow)', 
+            width: 80, height: 80, borderRadius: 24, 
             display: 'grid', placeItems: 'center', margin: '0 auto 32px' 
           }}>
-            <Sparkles size={40} color="var(--primary)" className="pulse-glow" />
+            <Logo size={64} />
           </div>
           <p style={{ color: 'var(--text-dim)', fontSize: 16, lineHeight: 1.6, maxWidth: 360, margin: '0 auto 32px' }}>
             You've been selected for the AICore Connect Ambassador Program. Let's get your workstation ready.
