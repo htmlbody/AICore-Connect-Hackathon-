@@ -26,13 +26,14 @@ export const assessGithubProfile = async (profileData) => {
     5. top_strengths: (List of 3 strengths)
   `;
 
-  if (!AI_CONFIG.apiKey) {
+  // Trigger Smart Demo Mode if key is missing or explicitly set to 'DEMO'
+  if (!AI_CONFIG.apiKey || AI_CONFIG.apiKey === 'DEMO') {
     return {
-      recruiter_score: 82,
-      insight: "Strong foundational knowledge in multiple languages. Documentation is clear and repo structure is professional.",
-      resume_bullet: "Architected a modular system with high documentation standards, increasing code maintainability and reusability.",
-      global_rank: "Top 12%",
-      top_strengths: ["Consistency", "Documentation", "Versatility"]
+      recruiter_score: 88,
+      insight: "Exceptional technical proficiency with a strong focus on high-performance architecture. Project structure follows elite standards.",
+      resume_bullet: "Architected a GPU-accelerated neural hub using modern React patterns, achieving 60FPS across complex glassmorphism interfaces.",
+      global_rank: "Elite Architect",
+      top_strengths: ["Performance", "Architecture", "Documentation"]
     };
   }
 
