@@ -158,25 +158,43 @@ const Rewards = () => {
                     const html2canvas = (await import('html2canvas')).default;
                     const element = document.getElementById('certificate-print-area');
                     
-                    // Ghost Rendering Hack: Clone and force desktop size
+                    // Ghost Rendering Hack: Force perfect A4 proportions (landscape)
                     const clone = element.cloneNode(true);
-                    clone.style.width = '1200px';
+                    clone.style.width = '1122px'; // A4 Width at 96 DPI
+                    clone.style.height = '794px'; // A4 Height at 96 DPI
                     clone.style.position = 'fixed';
                     clone.style.left = '-9999px';
                     clone.style.top = '0';
                     clone.style.transform = 'none';
+                    clone.style.borderRadius = '0';
+                    clone.style.padding = '0';
                     document.body.appendChild(clone);
 
-                    // Ensure font sizes inside clone are desktop-friendly
+                    // Force rigid font sizes inside clone to prevent elongation
+                    const frame = clone.querySelector('.certificate-content-frame');
+                    if (frame) {
+                      frame.style.padding = '80px 100px';
+                      frame.style.borderWidth = '25px';
+                    }
                     const h1 = clone.querySelector('h1');
-                    if (h1) h1.style.fontSize = '48px';
+                    if (h1) {
+                      h1.style.fontSize = '48px';
+                      h1.style.marginBottom = '20px';
+                    }
                     const h2 = clone.querySelector('h2');
-                    if (h2) h2.style.fontSize = '56px';
+                    if (h2) {
+                      h2.style.fontSize = '64px';
+                      h2.style.marginBottom = '20px';
+                    }
+                    const p = clone.querySelectorAll('p');
+                    p.forEach(el => el.style.fontSize = '16px');
 
                     const canvas = await html2canvas(clone, { 
                       scale: 2, 
                       useCORS: true,
                       backgroundColor: '#ffffff',
+                      width: 1122,
+                      height: 794,
                       logging: false
                     });
                     
@@ -185,19 +203,16 @@ const Rewards = () => {
                     const imgData = canvas.toDataURL('image/png');
                     const pdf = new jsPDF({
                       orientation: 'landscape',
-                      unit: 'mm',
-                      format: 'a4'
+                      unit: 'px',
+                      format: [1122, 794]
                     });
                     
-                    const pdfWidth = pdf.internal.pageSize.getWidth();
-                    const pdfHeight = pdf.internal.pageSize.getHeight();
-                    
-                    pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+                    pdf.addImage(imgData, 'PNG', 0, 0, 1122, 794);
                     pdf.save(`AURA_Certificate_${userData.name.replace(/ /g, '_')}.pdf`);
-                    setShowSuccess("Professional PDF generated!");
+                    setShowSuccess("Neural PDF generated!");
                   } catch (err) {
                     console.error("PDF Export failed:", err);
-                    alert("Export failed. Please try again or use a desktop browser.");
+                    alert("Export failed. Please try again.");
                   }
                 }}
                 className="btn-primary" style={{ 
