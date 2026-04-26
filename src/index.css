@@ -385,6 +385,8 @@ select {
 ::-webkit-scrollbar-thumb:hover { background: #475569; }
 
 /* ═══ RESPONSIVE DESIGN ═══ */
+.mobile-header { display: none; }
+
 @media (max-width: 1200px) {
   .responsive-grid-4 { grid-template-columns: repeat(2, 1fr) !important; }
 }
@@ -395,12 +397,52 @@ select {
 }
 
 @media (max-width: 768px) {
-  .responsive-grid-4 { grid-template-columns: 1fr !important; }
-  .responsive-grid-3 { grid-template-columns: 1fr !important; }
-  .responsive-grid-2 { grid-template-columns: 1fr !important; }
-  .responsive-grid-2-1 { grid-template-columns: 1fr !important; }
-  .responsive-profile-banner { flex-direction: column !important; text-align: center !important; }
-  .responsive-profile-banner > div:last-child { text-align: center !important; margin-left: 0 !important; }
+  .mobile-header { 
+    display: flex !important; 
+    position: fixed; top: 0; left: 0; right: 0; height: 64px;
+    background: var(--bg-sidebar); border-bottom: 1px solid var(--border-glass);
+    z-index: 1000; padding: 0 20px; align-items: center; justify-content: space-between;
+    backdrop-filter: blur(12px);
+  }
+
+  .sidebar {
+    position: fixed !important; top: 0; left: 0; bottom: 0;
+    transform: translateX(-100%);
+    z-index: 5000 !important;
+    width: 280px !important;
+    box-shadow: 20px 0 50px rgba(0,0,0,0.5);
+  }
+
+  .sidebar.sidebar-open {
+    transform: translateX(0);
+  }
+
+  .sidebar-overlay {
+    display: block !important;
+  }
+
+  main {
+    padding-top: 64px !important;
+    margin-left: 0 !important;
+  }
+
+  .responsive-grid-4, .responsive-grid-3, .responsive-grid-2, .responsive-grid-2-1 { 
+    grid-template-columns: 1fr !important; 
+  }
+  
+  .responsive-profile-banner { 
+    flex-direction: column !important; 
+    text-align: center !important; 
+    padding: 30px !important;
+  }
+  
+  .responsive-profile-banner > div:last-child { 
+    text-align: center !important; 
+    margin-left: 0 !important; 
+    margin-top: 20px;
+  }
+
+  .glass-card { padding: 20px !important; }
 }
 
 /* 🖨️ Professional SINGLE-PAGE Print Styles */

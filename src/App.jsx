@@ -179,7 +179,20 @@ const App = () => {
   };
 
   return (
-    <div style={{ display: 'flex', minHeight: '100vh', position: 'relative' }}>
+    <div className={`app-container ${sidebarOpen ? 'sidebar-expanded' : ''}`} style={{ display: 'flex', minHeight: '100vh', position: 'relative' }}>
+      {/* Mobile Header */}
+      <div className="mobile-header">
+        <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+          <span style={{ fontSize: 24 }}>🌌</span>
+          <span style={{ fontSize: 18, fontWeight: 900, color: 'var(--text-main)', letterSpacing: '-0.5px' }}>AURA AI</span>
+        </div>
+        <button 
+          onClick={() => setSidebarOpen(!sidebarOpen)}
+          style={{ background: 'none', border: 'none', color: 'var(--text-main)', cursor: 'pointer', padding: 8 }}>
+          {sidebarOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
+      </div>
+
       {/* Premium Command Bar Overlay */}
       <AnimatePresence>
         {commandBarOpen && (
