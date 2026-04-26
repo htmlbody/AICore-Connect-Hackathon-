@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { CheckCircle, Clock, Upload, Link, Image, FileText, AlertCircle, Sparkles } from 'lucide-react';
+import Logo from '../components/Logo';
 
 const initialTasks = [
   { id: 1, title: 'Share Campus Event on LinkedIn', desc: 'Post about the latest campus event with the official hashtag.', type: 'Social Media', points: 50, status: 'pending', deadline: '28 Apr 2026', proof: 'link' },
@@ -41,13 +42,16 @@ const TaskBoard = () => {
 
   return (
     <div>
-      <header style={{ marginBottom: 40 }}>
-        <h1 className="text-gradient" style={{ fontSize: 34, fontWeight: 800, marginBottom: 6 }}>
-          Task Board
-        </h1>
-        <p style={{ color: 'var(--text-dim)', fontSize: 15 }}>
-          Complete challenges, submit proof, and earn points through AI-verified tasks.
-        </p>
+      <header style={{ marginBottom: 40, display: 'flex', alignItems: 'center', gap: 16 }}>
+        <Logo size={50} />
+        <div>
+          <h1 className="text-gradient" style={{ fontSize: 34, fontWeight: 800, marginBottom: 6 }}>
+            Task Board
+          </h1>
+          <p style={{ color: 'var(--text-dim)', fontSize: 15 }}>
+            Complete challenges, submit proof, and earn points through AI-verified tasks.
+          </p>
+        </div>
       </header>
 
       {/* Summary cards */}

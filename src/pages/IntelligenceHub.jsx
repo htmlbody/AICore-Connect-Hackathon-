@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Code2, FileText, Flame, Sparkles, ExternalLink, Target, Trophy, CheckCircle } from 'lucide-react';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import Logo from '../components/Logo';
 import { fetchGithubProfile } from '../utils/github';
 import { assessGithubProfile } from '../utils/ai';
 
@@ -109,13 +110,16 @@ const IntelligenceHub = () => {
   return (
     <div>
       {/* Header */}
-      <header style={{ marginBottom: 48 }}>
-        <h1 className="text-gradient" style={{ fontSize: 34, fontWeight: 800, marginBottom: 6 }}>
-          Ambassador Intelligence
-        </h1>
-        <p style={{ color: 'var(--text-dim)', fontSize: 15 }}>
-          Analyze GitHub profiles with recruiter-level precision.
-        </p>
+      <header style={{ marginBottom: 48, display: 'flex', alignItems: 'center', gap: 16 }}>
+        <Logo size={50} />
+        <div>
+          <h1 className="text-gradient" style={{ fontSize: 34, fontWeight: 800, marginBottom: 6 }}>
+            Ambassador Intelligence
+          </h1>
+          <p style={{ color: 'var(--text-dim)', fontSize: 15 }}>
+            Analyze GitHub profiles with recruiter-level precision.
+          </p>
+        </div>
       </header>
 
       {!showResults ? (

@@ -92,9 +92,12 @@ const Profile = () => {
 
   return (
     <div style={{ maxWidth: 1000, margin: '0 auto', width: '100%' }}>
-      <header style={{ marginBottom: 40 }}>
-        <h1 style={{ fontSize: 32, fontWeight: 800, marginBottom: 8, letterSpacing: '-0.02em' }}>Profile Settings</h1>
-        <p style={{ color: 'var(--text-dim)' }}>Manage your ambassador identity and public presence.</p>
+      <header style={{ marginBottom: 40, display: 'flex', alignItems: 'center', gap: 16 }}>
+        <Logo size={50} />
+        <div>
+          <h1 style={{ fontSize: 32, fontWeight: 800, marginBottom: 8, letterSpacing: '-0.02em' }}>Profile Settings</h1>
+          <p style={{ color: 'var(--text-dim)' }}>Manage your ambassador identity and public presence.</p>
+        </div>
       </header>
 
       {/* Premium Success Animation */}

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Trophy, ArrowUp, ArrowDown, Minus, Flame, Star, Award } from 'lucide-react';
+import Logo from '../components/Logo';
 
 const ambassadors = [
   { rank: 1, name: 'Arjun Mehta', username: 'arjunmehta', score: 96, repos: 42, followers: 312, change: 'up', badge: '🔥 Elite', avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=arjun' },
@@ -27,13 +28,16 @@ const Leaderboard = () => {
 
   return (
     <div>
-      <header style={{ marginBottom: 40 }}>
-        <h1 className="text-gradient" style={{ fontSize: 34, fontWeight: 800, marginBottom: 6 }}>
-          Ambassador Leaderboard
-        </h1>
-        <p style={{ color: 'var(--text-dim)', fontSize: 15 }}>
-          Top performers ranked by AI-powered recruiter-readiness score.
-        </p>
+      <header style={{ marginBottom: 40, display: 'flex', alignItems: 'center', gap: 16 }}>
+        <Logo size={50} />
+        <div>
+          <h1 className="text-gradient" style={{ fontSize: 34, fontWeight: 800, marginBottom: 6 }}>
+            Ambassador Leaderboard
+          </h1>
+          <p style={{ color: 'var(--text-dim)', fontSize: 15 }}>
+            Top performers ranked by AI-powered recruiter-readiness score.
+          </p>
+        </div>
       </header>
 
       {/* Top 3 Podium */}
