@@ -14,6 +14,7 @@ Traditional CA programs are bogged down by manual spreadsheets and lack of recog
 ## 🎥 Project Demo
 
 > **Watch the full walkthrough here:** [YouTube Demo Walkthrough](https://youtu.be/xMKk57to6UY)
+> **Live Production Site:** [https://aurai-drab.vercel.app/](https://aurai-drab.vercel.app/)
 
 ![AURA AI Dashboard Preview](https://github.com/htmlbody/AICore-Connect-Hackathon-/raw/main/public/preview.png)
 
