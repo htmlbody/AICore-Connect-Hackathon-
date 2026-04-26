@@ -83,7 +83,9 @@ const Rewards = () => {
               }}>
               
               {/* Certificate Inner Frame */}
-              <div style={{ 
+              <div 
+                className="certificate-content-frame"
+                style={{ 
                 border: '15px solid #f8fafc', height: '100%', borderRadius: 20, 
                 padding: 'min(8vw, 60px) min(6vw, 40px)', position: 'relative', 
                 color: '#1e293b', textAlign: 'center', display: 'flex', 
@@ -152,21 +154,51 @@ const Rewards = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={async () => {
-                  const html2canvas = (await import('html2canvas')).default;
-                  const element = document.getElementById('certificate-print-area');
-                  const canvas = await html2canvas(element, { scale: 3, useCORS: true });
-                  const imgData = canvas.toDataURL('image/png');
-                  const pdf = new jsPDF({
-                    orientation: 'landscape',
-                    unit: 'mm',
-                    format: 'a4'
-                  });
-                  const imgProps = pdf.getImageProperties(imgData);
-                  const pdfWidth = pdf.internal.pageSize.getWidth();
-                  const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
-                  pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
-                  pdf.save(`AURA_Certificate_${userData.name.replace(/ /g, '_')}.pdf`);
-                  setShowSuccess("Neural PDF generated!");
+                  try {
+                    const html2canvas = (await import('html2canvas')).default;
+                    const element = document.getElementById('certificate-print-area');
+                    
+                    // Ghost Rendering Hack: Clone and force desktop size
+                    const clone = element.cloneNode(true);
+                    clone.style.width = '1200px';
+                    clone.style.position = 'fixed';
+                    clone.style.left = '-9999px';
+                    clone.style.top = '0';
+                    clone.style.transform = 'none';
+                    document.body.appendChild(clone);
+
+                    // Ensure font sizes inside clone are desktop-friendly
+                    const h1 = clone.querySelector('h1');
+                    if (h1) h1.style.fontSize = '48px';
+                    const h2 = clone.querySelector('h2');
+                    if (h2) h2.style.fontSize = '56px';
+
+                    const canvas = await html2canvas(clone, { 
+                      scale: 2, 
+                      useCORS: true,
+                      backgroundColor: '#ffffff',
+                      logging: false
+                    });
+                    
+                    document.body.removeChild(clone);
+
+                    const imgData = canvas.toDataURL('image/png');
+                    const pdf = new jsPDF({
+                      orientation: 'landscape',
+                      unit: 'mm',
+                      format: 'a4'
+                    });
+                    
+                    const pdfWidth = pdf.internal.pageSize.getWidth();
+                    const pdfHeight = pdf.internal.pageSize.getHeight();
+                    
+                    pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+                    pdf.save(`AURA_Certificate_${userData.name.replace(/ /g, '_')}.pdf`);
+                    setShowSuccess("Professional PDF generated!");
+                  } catch (err) {
+                    console.error("PDF Export failed:", err);
+                    alert("Export failed. Please try again or use a desktop browser.");
+                  }
                 }}
                 className="btn-primary" style={{ 
                   background: 'var(--primary)', 
