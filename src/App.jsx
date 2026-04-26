@@ -379,7 +379,7 @@ const App = () => {
       </aside>
 
       {/* ═══ MAIN CONTENT ═══ */}
-      <main ref={mainRef} className="main-content" style={{ flex: 1, padding: '40px 48px', overflowY: 'auto' }}>
+      <main ref={mainRef} className="main-content" style={{ flex: 1, padding: '40px 48px', overflowY: 'auto', overflowX: 'hidden', width: '100%' }}>
         <AnimatePresence mode="wait">
           <motion.div key={activeTab}
             initial={{ opacity: 0, y: 12 }}
