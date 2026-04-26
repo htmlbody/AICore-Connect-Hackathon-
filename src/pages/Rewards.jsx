@@ -151,7 +151,23 @@ const Rewards = () => {
               <button 
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() => window.print()}
+                onClick={async () => {
+                  const html2canvas = (await import('html2canvas')).default;
+                  const element = document.getElementById('certificate-print-area');
+                  const canvas = await html2canvas(element, { scale: 3, useCORS: true });
+                  const imgData = canvas.toDataURL('image/png');
+                  const pdf = new jsPDF({
+                    orientation: 'landscape',
+                    unit: 'mm',
+                    format: 'a4'
+                  });
+                  const imgProps = pdf.getImageProperties(imgData);
+                  const pdfWidth = pdf.internal.pageSize.getWidth();
+                  const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+                  pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+                  pdf.save(`AURA_Certificate_${userData.name.replace(/ /g, '_')}.pdf`);
+                  setShowSuccess("Neural PDF generated!");
+                }}
                 className="btn-primary" style={{ 
                   background: 'var(--primary)', 
                   padding: '12px 24px',
